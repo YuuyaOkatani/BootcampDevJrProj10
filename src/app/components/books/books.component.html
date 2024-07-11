@@ -1,0 +1,36 @@
+
+<!-- Componente pai -->
+
+<!-- Componente filho -->
+<app-book [book]="book" (saveEmitter)="saveBook()"></app-book>
+<!-- Componente filho -->
+
+<div class="container mt-5">
+    <h3>Livros cadastrados</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Preço</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.price}}</td>
+                <td>
+                    <button class="btn btn-sm btn-success me-2" (click)="updateBook(book)" >Alterar</button>
+                    <button class="btn btn-sm btn-danger" (click)="removeBook(book)" >Remover</button>
+                </td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+</div>
+<!-- Componente pai -->
